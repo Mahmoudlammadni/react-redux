@@ -17,6 +17,7 @@ const redux_todo =(state=initialstate,action)=>{
             case 'supprimer':
     
         default:
-            break;
+            return state
     }
 }
+export default redux_todo
