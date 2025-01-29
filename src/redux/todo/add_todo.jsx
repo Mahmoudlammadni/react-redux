@@ -6,15 +6,22 @@ import { add } from "./action";
 export default function Add_todo() {
     const id = useSelector(data => data.taches[data.taches.length - 1].id + 1);
     const [titre, settitre] = useState("");
-    const [etate, setetate] = useState("");
+    const [etat, setetat] = useState("");
     const dis = useDispatch();
     const nav = useNavigate();
 
     function addtodo(e) {
         e.preventDefault();
         const newd = new Date().toISOString().split("T")[0]; 
-        dis(add({ id: parseInt(id), titre: titre, date: newd, etate: etate }));
-        nav("/");
+        if (etat=="en cours" || etat=="complète") {
+            dis(add({ id: parseInt(id), titre: titre, date: newd, etat: etat }));
+        nav("/t");
+        }
+        else{
+
+            alert('etate accepter seulment en cours ou complète')
+        }
+        
     }
 
     return (
@@ -27,7 +34,7 @@ export default function Add_todo() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="etate" className="form-label">État</label>
-                    <input type="text"placeholder="État de la tâche"onChange={(e) => setetate(e.target.value)}className="form-control"/>
+                    <input type="text"placeholder="État de la tâche"onChange={(e) => setetat(e.target.value)}className="form-control"/>
                 </div>
                 <button type="submit" className="btn btn-primary">Ajouter</button>
             </form>

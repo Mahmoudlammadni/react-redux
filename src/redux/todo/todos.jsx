@@ -21,8 +21,8 @@ export default function Todos() {
                   <strong>Date:</strong> {p.date}
                 </p>
                 <div className="d-flex align-items-center">
-                  <span className={`badge ${p.etate === "en cours" ? "bg-warning" : "bg-success"} me-2`}>
-                    {p.etate}
+                  <span className={`badge ${p.etat === "en cours" ? "bg-warning" : "bg-success"} me-2`}>
+                    {p.etat}
                   </span>
                   <button className="btn btn-danger btn-sm" onClick={() => dis(delet(p.id))}>
                     supprimer

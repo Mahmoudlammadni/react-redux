@@ -12,12 +12,18 @@ export default function Mod_todo() {
     const nav = useNavigate()
     const [titre, settitre] = useState(tach.titre)
     const [date, setdate] = useState(tach.date)
-    const [etate, setetate] = useState(tach.etate)
+    const [etat, setetat] = useState(tach.etat)
 
     function mod(e) {
         e.preventDefault()
-        dis(modify({id: parseid, titre: titre, date: date, etate: etate}))
-        nav('/')
+        if (etat=="en cours" || etat=="complète") {
+            dis(modify({id: parseid, titre: titre, date: date, etat: etat}))
+                nav("/t");
+                }
+                else{
+        
+                    alert('etate accepter seulment en cours ou complète')
+                }
     }
 
     return (
@@ -34,7 +40,7 @@ export default function Mod_todo() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="etate" className="form-label">État</label>
-                    <input type="text"value={etate}onChange={(e) => {setetate(e.target.value)}}  className="form-control" />
+                    <input type="text"value={etat}onChange={(e) => {setetat(e.target.value)}}  className="form-control" />
                 </div>
                 <button type="submit" className="btn btn-primary">Modifier</button>
             </form>
