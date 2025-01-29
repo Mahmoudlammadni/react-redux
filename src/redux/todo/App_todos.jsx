@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Todos from "./todos";
 import Add_todo from "./add_todo";
+import Mod_todo from "./modify";
 
 export default function App_todos() {
   return (
@@ -20,6 +21,7 @@ export default function App_todos() {
       <Routes>
         <Route path="/" element={<Todos />} />
         <Route path="/a" element={<Add_todo />} />
+        <Route path="/mod/:id" element={<Mod_todo />} />
       </Routes>
     </BrowserRouter>
   );

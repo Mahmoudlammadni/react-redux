@@ -1,7 +1,11 @@
 import { useSelector } from "react-redux";
+import { delet } from "./action";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Todos() {
   const taches = useSelector((state) => state.taches); 
+  const dis = useDispatch();
 
   return (
     <div className="container mt-4">
@@ -16,12 +20,17 @@ export default function Todos() {
                 <p className="card-text">
                   <strong>Date:</strong> {p.date}
                 </p>
-                <span className={`badge ${p.etate === "en cours" ? "bg-warning" : "bg-success"}`}>
-                  {p.etate}
-                </span>
+                <div className="d-flex align-items-center">
+                  <span className={`badge ${p.etate === "en cours" ? "bg-warning" : "bg-success"} me-2`}>
+                    {p.etate}
+                  </span>
+                  <button className="btn btn-danger btn-sm" onClick={() => dis(delet(p.id))}>
+                    supprimer
+                  </button>
+                <Link to={`mod/${p.id}`} className="btn btn-success btn-sm">Modifier</Link>
+                </div>
               </div>
             </div>
-          
           </div>
         ))}
       </div>

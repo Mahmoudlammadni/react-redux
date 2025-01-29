@@ -6,12 +6,13 @@ const redux_todo =(state=initialstate,action)=>{
         case "add":
                 return {...state,taches:[...state.taches,action.payload]}
         case "modify":
-            const tch = state.taches.find((t)=>t.id===action.payload.id)
+            const tch = state.taches.find((t)=>t.id==action.payload.id)
             if (tch) {
                 tch.titre=action.payload.titre
                 tch.date=action.payload.date
                 tch.etate=action.payload.etate
             }
+           
         case "delete":
             return{...state,taches:state.taches.filter(tch=>tch.id!==action.payload)}
             case 'supprimer':
