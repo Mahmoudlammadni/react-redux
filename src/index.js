@@ -2,13 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
-import Form from "./redux/form";
-
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 
-<Form/>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
