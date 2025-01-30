@@ -26,7 +26,7 @@ const redux_todo =(state=initialstate,action)=>{
            
         case "delete":
             return{...state,taches:state.taches.filter(tch=>tch.id!==action.payload)}
-            case 'supprimer':
+         
     
         default:
             return state
