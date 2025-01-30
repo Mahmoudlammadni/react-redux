@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import App_todos from "./todo/App_todos";
 import Contact from "./contact/contact";
-import Products from "./hello";
 export default function App_redux() {
   return (
     <BrowserRouter>
@@ -26,9 +25,7 @@ export default function App_redux() {
               <li className="nav-item">
                 <Link to="/c" className="nav-link text-light">Contact</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/" className="nav-link text-light">Products</Link>
-              </li>
+             
             </ul>
           </div>
         </div>
@@ -37,7 +34,7 @@ export default function App_redux() {
       {/* Main content container */}
       <div className="container mt-4">
         <Routes>
-          <Route path="/" element={<Products />} />
+          
           <Route path="/t/*" element={<App_todos />} />
           <Route path="/c" element={<Contact />} />
         </Routes>
