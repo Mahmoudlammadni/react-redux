@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { legacy_createStore } from "redux";
 import { Provider } from "react-redux";
-import redux_todo from "./redux/todo/todo_redux";
+import redux_todo from "./redux/todo_redux";
 
 import  App_redux  from "./redux/Appredux";
 

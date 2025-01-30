@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { useState } from "react"
-import { modify } from "./action"
+import { modify } from "../../redux/action"; 
 
 export default function Mod_todo() {
     const {id} = useParams()

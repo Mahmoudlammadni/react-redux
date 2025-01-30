@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { add } from "./action";
-
+import { add } from "../../redux/action"; 
 export default function Add_todo() {
     const id = useSelector(data => data.taches[data.taches.length - 1].id + 1);
     const [titre, settitre] = useState("");

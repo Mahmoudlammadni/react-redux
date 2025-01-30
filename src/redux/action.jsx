@@ -19,3 +19,19 @@ export function delet(id) {
     }
     
 }
+export const addc =(cn)=>{
+    return{
+        type:"addc",payload:cn
+    }
+
+}
+export const deletc=(id)=>{
+    return{
+        type:"deletc",payload:id
+    }
+}
+export const modyc =(cn)=>{
+    return{
+        type:"modyc",payload:cn
+    }
+}

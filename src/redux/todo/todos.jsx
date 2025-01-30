@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { delet } from "./action";
+import { delet } from "../../redux/action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 

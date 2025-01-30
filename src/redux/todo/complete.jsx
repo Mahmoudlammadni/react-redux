@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { delet } from "./action";
+import { delet } from "../../redux/action"; 
 export default function Complete() {
     const tchs = useSelector(data=>data.taches)
     const dis =useDispatch()
