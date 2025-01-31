@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
+import { deletc } from "../action";
+import { useDispatch } from "react-redux";
 
 export default function Contact() {
     const con = useSelector(data => data.contact);
-
+    const dis = useDispatch()
     return (
         <div className="container mt-4">
             <h2 className="text-center text-primary mb-4">Contacts</h2>
@@ -21,6 +23,7 @@ export default function Contact() {
                                 <p className="card-text">
                                     <strong>Email:</strong> {c.email}
                                 </p>
+                                <button className="btn btn-danger btn-sm" onClick={() => dis(deletc(c.id))}>Supprimer</button>
                             </div>
                         </div>
                     </div>
