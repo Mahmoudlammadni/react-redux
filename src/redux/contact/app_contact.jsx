@@ -3,6 +3,7 @@ import Contact from './contact';
 import { Route, Routes, Link } from 'react-router-dom';
 import Add_contact from './add_contact';
 import Mody_contact from './modify';
+import Con_search from './search';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 export default function App_contact() {
@@ -14,6 +15,7 @@ export default function App_contact() {
           <div className="navbar-nav">
             <Link to="/c/" className="nav-link">Contact</Link>
             <Link to="/c/a" className="nav-link">Ajouter</Link>
+            
           
           </div>
         </div>
@@ -23,6 +25,7 @@ export default function App_contact() {
         <Route path="/" element={<Contact />} />
         <Route path="/a" element={<Add_contact />} />
         <Route path="/m/:id" element={<Mody_contact />} />
+        <Route path="/s/:nom" element={<Con_search />} />
       </Routes>
     </div>
   );

@@ -3,12 +3,22 @@ import { deletc } from "../action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Mody_contact from "./modify";
+import { useState } from "react";
 
 export default function Contact() {
     const con = useSelector(data => data.contact);
     const dis = useDispatch()
+    const [cont_name,setcon]=useState('')
     return (
+        <>
+       
         <div className="container mt-4">
+        <div className="d-flex align-items-center">
+  <input  type="text" className="form-control w-auto me-2" placeholder="chercher nom..." onChange={(e) => setcon(e.target.value)} />
+  <Link className="btn btn-primary" to={`/c/s/${cont_name}`}>Search</Link>
+</div>
+
+
             <h2 className="text-center text-primary mb-4">Contacts</h2>
             <div className="row">
                 {con.map((c, i) => (
@@ -33,5 +43,6 @@ export default function Contact() {
                 ))}
             </div>
         </div>
+        </>
     );
 }
