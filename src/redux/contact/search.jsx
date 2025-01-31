@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-
+import { deletc } from "../action";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Con_search() {
     const {nom}=useParams()
     const contacts = useSelector(data=>data.contact)
+    const dis = useDispatch()
+    const nav = useNavigate()
     return( 
     <div className="row">
       {  contacts.filter((p)=>p.nom===nom)
@@ -21,7 +26,8 @@ export default function Con_search() {
                             <p className="card-text">
                                 <strong>Email:</strong> {c.email}
                             </p>
-                           
+                           <button className="btn btn-danger btn-sm me-3" onClick={() => dis(deletc(c.id))+ nav('/c/')}>Supprimer</button>
+                             <Link className="btn btn-success btn-sm"  to={`/c/m/${c.id}`}>mod</Link>
                         </div>
                     </div>
                 </div>
