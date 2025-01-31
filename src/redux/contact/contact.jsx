@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { deletc } from "../action";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import Mody_contact from "./modify";
 
 export default function Contact() {
     const con = useSelector(data => data.contact);
@@ -23,7 +25,8 @@ export default function Contact() {
                                 <p className="card-text">
                                     <strong>Email:</strong> {c.email}
                                 </p>
-                                <button className="btn btn-danger btn-sm" onClick={() => dis(deletc(c.id))}>Supprimer</button>
+                                <button className="btn btn-danger btn-sm me-3" onClick={() => dis(deletc(c.id))}>Supprimer</button>
+                                <Link className="btn btn-success btn-sm"  to={`/c/m/${c.id}`}>mod</Link>
                             </div>
                         </div>
                     </div>

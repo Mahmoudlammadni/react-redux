@@ -24,7 +24,7 @@ export default function Todos() {
                 <span className={`badge ${p.etat === "en cours" ? "bg-warning" : "bg-success"} me-2`}>
                   {p.etat}
                 </span>
-                <button className="btn btn-danger btn-sm" onClick={() => dis(delet(p.id))}>
+                <button className="btn btn-danger btn-sm me-2" onClick={() => dis(delet(p.id))}>
                   supprimer
                 </button>
               <Link to={`mod/${p.id}`} className="btn btn-success btn-sm">Modifier</Link>

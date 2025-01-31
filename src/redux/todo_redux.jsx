@@ -39,7 +39,7 @@ const redux_todo = (state = initialstate, action) => {
         case "deletc":
             return { ...state, contact: state.contact.filter((c) => c.id !== action.payload) };
         case "modyc":
-            const cnt = state.contact.find((c) => c.id === action.payload.id);
+            const cnt = state.contact.find((c) => c.id == action.payload.id);
             if (cnt) {
                 cnt.nom = action.payload.nom;
                 cnt.telephone = action.payload.telephone;
