@@ -18,7 +18,7 @@ export default function Mod_todo() {
         e.preventDefault()
         if (etat=="en cours" || etat=="complète") {
             dis(modify({id: parseid, titre: titre, date: date, etat: etat}))
-                nav("/t");
+                nav("/");
                 }
                 else{
         

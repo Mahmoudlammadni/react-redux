@@ -25,7 +25,7 @@ export default function Complete() {
                   <button className="btn btn-danger btn-sm" onClick={() => dis(delet(p.id))}>
                     supprimer
                   </button>
-                <Link to={`mod/${p.id}`} className="btn btn-success btn-sm">Modifier</Link>
+                <Link to={`/mod/${p.id}`} className="btn btn-success btn-sm">Modifier</Link>
                 </div>
               </div>
             </div>

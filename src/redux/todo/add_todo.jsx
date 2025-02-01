@@ -14,7 +14,7 @@ export default function Add_todo() {
         const newd = new Date().toISOString().split("T")[0]; 
         if (etat=="en cours" || etat=="complète") {
             dis(add({ id: parseInt(id), titre: titre, date: newd, etat: etat }));
-        nav("/t");
+        nav("/");
         }
         else{
 

@@ -18,9 +18,18 @@ const initialstate = {
             { id: 5, nom: "Ali", telephone: "0656789012", email: "ali@gmail.com" },
             { id: 6, nom: "Fatima", telephone: "0667890123", email: "fatima@gmail.com" }
         
+    ],
+     produits : [
+        { id: 1, nom: "iPhone", prix: 1400, quantite: 22 },
+        { id: 2, nom: "AirPods", prix: 250, quantite: 10 },
+        { id: 3, nom: "MacBook Pro", prix: 2000, quantite: 5 },
+        { id: 4, nom: "iPad", prix: 800, quantite: 15 },
+        { id: 5, nom: "Apple Watch", prix: 500, quantite: 8 }
     ]
+    
+
 }
-const redux_todo = (state = initialstate, action) => {
+const redux = (state = initialstate, action) => {
     switch (action.type) {
         case "add":
             return { ...state, taches: [...state.taches, action.payload] };
@@ -45,9 +54,23 @@ const redux_todo = (state = initialstate, action) => {
                 cnt.telephone = action.payload.telephone;
                 cnt.email = action.payload.email; 
             }
+        case "addp":
+            return {...state,produits:[...state.produits,action.payload]}
+        case "supp":
+            return{...state,produits:[...state.produits.filter((p)=>
+                    p.id!==action.payload
+            )]}
+        case "modp":
+            const curr_pro=state.produits.find((p)=>p.id===action.payload.id)
+            if (curr_pro) {
+                curr_pro.nom=action.payload.nom
+                curr_pro.prix=action.payload.prix
+                curr_pro.quantite=action.payload.quantite
+               
+            }
           
         default:
             return state;
     }
 };
-export default redux_todo;
+export default redux;

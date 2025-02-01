@@ -35,3 +35,24 @@ export const modyc =(cn)=>{
         type:"modyc",payload:cn
     }
 }
+
+export const addp=(p)=>{
+    return{
+        type:"addp",payload:p
+    }
+}
+export function delp(p) {
+    return{
+        type : "supp",
+        payload : p
+
+} 
+}
+export function modp(p) {
+    return{
+        type : "modp",
+        payload:p
+
+
+    }
+}
