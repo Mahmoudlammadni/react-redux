@@ -15,7 +15,8 @@ export default function Contact() {
         <div className="container mt-4">
         <div className="d-flex align-items-center">
   <input  type="text" className="form-control w-auto me-2" placeholder="chercher nom..." onChange={(e) => setcon(e.target.value)} />
-  <Link className="btn btn-primary" to={`/c/s/${cont_name}`}>Search</Link>
+  <Link className="btn btn-primary" to={cont_name ? `/c/s/${cont_name}` : "/c/"}>Search</Link>
+
 </div>
 
 
