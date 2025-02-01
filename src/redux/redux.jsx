@@ -19,7 +19,7 @@ const initialstate = {
             { id: 6, nom: "Fatima", telephone: "0667890123", email: "fatima@gmail.com" }
         
     ],
-     produits : [
+     products : [
         { id: 1, nom: "iPhone", prix: 1400, quantite: 22 },
         { id: 2, nom: "AirPods", prix: 250, quantite: 10 },
         { id: 3, nom: "MacBook Pro", prix: 2000, quantite: 5 },
