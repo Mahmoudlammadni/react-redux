@@ -1,36 +1,30 @@
-import { useSelector } from "react-redux"
+import { Routes, Route, Link } from "react-router-dom";
+import Products from "./products";
+import Add_produits from "./add_products";
 export default function App_products() {
-    const prods = useSelector(data=>data.products)
-    return(
-        <div className="container mt-4">
-        <h2 className="text-center text-dark mb-4">Product List</h2>
-        <div className="table-responsive">
-            <table className="table table-striped table-hover text-center">
-                <thead className="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Nom</th>
-                        <th>Prix ($)</th>
-                        <th>Quantité</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {prods.map((p) => (
-                        <tr key={p.id}>
-                            <td>{p.id}</td>
-                            <td className="fw-bold">{p.nom}</td>
-                            <td className="text-success">${p.prix}</td>
-                            <td>{p.quantite}</td>
-                            <td>
-                                <button className="btn btn-sm btn-outline-primary">Buy</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+  return (
+    <div className="container mt-4">
+      <nav className="navbar navbar-expand-lg navbar-light mb-4" style={{ background: 'linear-gradient(90deg, #4e73df, #1cc88a)' }}>
+        <div className="container-fluid">
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="d-flex justify-content-between w-100">
+              <Link to="/" className="navbar-brand text-white fw-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Home</Link>
+              <div className="navbar-nav mx-auto d-flex">
+                <Link to="/p/" className="nav-link text-white px-4 py-2 rounded-3 hover-shadow" style={{ fontFamily: "'Poppins', sans-serif" }}>Produits</Link>
+                <Link to="/p/a" className="nav-link text-white px-4 py-2 rounded-3 hover-shadow" style={{ fontFamily: "'Poppins', sans-serif" }}>Ajouter</Link>
+              </div>
+            </div>
+          </div>
         </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/a" element={<Add_produits />} />
+      </Routes>
     </div>
-);
-    
+  );
 }

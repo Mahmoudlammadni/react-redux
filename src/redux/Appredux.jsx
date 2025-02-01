@@ -25,6 +25,7 @@ export default function App_redux() {
                 <NavLink to="/p" className={({ isActive }) =>`nav-link ${isActive ? "text-warning" : "text-light"}`}>Products
                 </NavLink>
               </li>
+              
             </ul>
           </div>
         </div>
@@ -34,7 +35,7 @@ export default function App_redux() {
         <Routes>
           <Route path="/*" element={<App_todos />} />
           <Route path="/c/*" element={<App_contact />} />
-          <Route path="/p/" element={<App_products />} />
+          <Route path="/p/*" element={<App_products />} />
         </Routes>
       </div>
     </BrowserRouter>

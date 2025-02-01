@@ -20,11 +20,11 @@ const initialstate = {
         
     ],
      products : [
-        { id: 1, nom: "iPhone", prix: 1400, quantite: 22 },
-        { id: 2, nom: "AirPods", prix: 250, quantite: 10 },
-        { id: 3, nom: "MacBook Pro", prix: 2000, quantite: 5 },
-        { id: 4, nom: "iPad", prix: 800, quantite: 15 },
-        { id: 5, nom: "Apple Watch", prix: 500, quantite: 8 }
+         { id: 1, nom: "iPhone", prix: 1400, quantite: 22 },
+         { id: 2, nom: "AirPods", prix: 250, quantite: 10 },
+         { id: 3, nom: "MacBook Pro", prix: 2000, quantite: 5 },
+         { id: 4, nom: "iPad", prix: 800, quantite: 15 },
+         { id: 5, nom: "Apple Watch", prix: 500, quantite: 8 }
     ]
     
 
@@ -55,13 +55,13 @@ const redux = (state = initialstate, action) => {
                 cnt.email = action.payload.email; 
             }
         case "addp":
-            return {...state,produits:[...state.produits,action.payload]}
+            return {...state,products:[...state.products,action.payload]}
         case "supp":
-            return{...state,produits:[...state.produits.filter((p)=>
+            return{...state,products:[...state.products.filter((p)=>
                     p.id!==action.payload
             )]}
         case "modp":
-            const curr_pro=state.produits.find((p)=>p.id===action.payload.id)
+            const curr_pro=state.products.find((p)=>p.id===action.payload.id)
             if (curr_pro) {
                 curr_pro.nom=action.payload.nom
                 curr_pro.prix=action.payload.prix
