@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { delp } from "../action";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 export default function Products() {
     const prods = useSelector(data=>data.products)
     const dis =useDispatch()
@@ -28,7 +29,8 @@ export default function Products() {
                             <td>
                                
                                 <button onClick={()=>dis(delp(p.id))} className="btn btn-sm btn-outline-danger">delete</button>
-                            </td>
+                                <Link to={`/p/m/${p.id}`} className="btn btn-sm btn-outline-primary">Modify</Link>
+                                </td>
                         </tr>
                     ))}
                 </tbody>
