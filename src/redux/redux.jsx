@@ -25,7 +25,8 @@ const initialstate = {
          { id: 3, nom: "MacBook Pro", prix: 2000, quantite: 5 },
          { id: 4, nom: "iPad", prix: 800, quantite: 15 },
          { id: 5, nom: "Apple Watch", prix: 500, quantite: 8 }
-    ]
+    ],
+    panier :[]
     
 
 }
@@ -68,6 +69,12 @@ const redux = (state = initialstate, action) => {
                 curr_pro.quantite=action.payload.quantite
                
             }
+            case "addpa":
+                return {...state,panier:[...state.panier,action.payload]}
+            case "suppa":
+                return{...state,panier:[...state.panier.filter((p)=>
+                        p.id!==action.payload
+                )]}
           
         default:
             return state;

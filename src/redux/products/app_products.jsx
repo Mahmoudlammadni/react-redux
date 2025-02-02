@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Products from "./products";
 import Add_produits from "./add_products";
 import Pro_mody from "./modifypro";
+import Basket from "./panier";
 export default function App_products() {
   return (
     <div className="container mt-4">
@@ -16,6 +17,7 @@ export default function App_products() {
               <div className="navbar-nav mx-auto d-flex">
                 <Link to="/p/" className="nav-link text-white px-4 py-2 rounded-3 hover-shadow" style={{ fontFamily: "'Poppins', sans-serif" }}>Produits</Link>
                 <Link to="/p/a" className="nav-link text-white px-4 py-2 rounded-3 hover-shadow" style={{ fontFamily: "'Poppins', sans-serif" }}>Ajouter</Link>
+                <Link to="/p/pa" className="nav-link text-white px-4 py-2 rounded-3 hover-shadow" style={{ fontFamily: "'Poppins', sans-serif" }}>Panier</Link>
               </div>
             </div>
           </div>
@@ -26,6 +28,7 @@ export default function App_products() {
         <Route path="/" element={<Products />} />
         <Route path="/m/:id" element={<Pro_mody />} />
         <Route path="/a" element={<Add_produits />} />
+        <Route path="/pa" element={<Basket />} />
       </Routes>
     </div>
   );

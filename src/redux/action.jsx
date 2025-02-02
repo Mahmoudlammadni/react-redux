@@ -56,3 +56,20 @@ export function modp(p) {
 
     }
 }
+export function suppa(p) {
+    return{
+        type : "suppa",
+        payload:p
+
+
+    }
+}
+ 
+export function addpa(p) {
+    return{
+        type : "addpa",
+        payload:p
+
+
+    }
+}
