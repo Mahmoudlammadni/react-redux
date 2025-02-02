@@ -70,7 +70,11 @@ const redux = (state = initialstate, action) => {
                
             }
             case "addpa":
-                return {...state,panier:[...state.panier,action.payload]}
+                const pr = state.panier.find((p)=>p.id===parseInt(action.payload.id))
+                if (!pr) {
+                    return {...state,panier:[...state.panier,action.payload]}
+                }
+                
             case "suppa":
                 return{...state,panier:[...state.panier.filter((p)=>
                         p.id!==action.payload

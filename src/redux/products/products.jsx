@@ -31,7 +31,7 @@ export default function Products() {
                                
                                 <button onClick={()=>dis(delp(p.id))} className="btn btn-sm   btn-outline-danger">delete</button>
                                 <Link to={`/p/m/${p.id}`} className="btn btn-sm btn-outline-success">Modify</Link>
-                                <button onClick={()=>dis(addpa(p.id))} className="btn btn-sm btn-outline-primary">Buy</button>
+                                <button onClick={()=>dis(addpa(p))} className="btn btn-sm btn-outline-primary">Buy</button>
                                
                                 </td>
                         </tr>
