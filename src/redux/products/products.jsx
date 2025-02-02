@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux"
+import { delp } from "../action";
+import { useDispatch } from "react-redux";
 export default function Products() {
     const prods = useSelector(data=>data.products)
+    const dis =useDispatch()
     return(
         <div className="container mt-4">
         <h2 className="text-center text-dark mb-4">Product List</h2>
@@ -23,7 +26,8 @@ export default function Products() {
                             <td className="text-success">${p.prix}</td>
                             <td>{p.quantite}</td>
                             <td>
-                                <button className="btn btn-sm btn-outline-primary">Buy</button>
+                               
+                                <button onClick={()=>dis(delp(p.id))} className="btn btn-sm btn-outline-danger">delete</button>
                             </td>
                         </tr>
                     ))}
