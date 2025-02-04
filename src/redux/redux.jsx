@@ -70,10 +70,19 @@ const redux = (state = initialstate, action) => {
                
             }
             case "addpa":
-                const pr = state.panier.find((p)=>p.id===parseInt(action.payload.id))
-                if (!pr) {
-                    return {...state,panier:[...state.panier,action.payload]}
+                const productToUpdate = state.products.find((p) => p.id === parseInt(action.payload.id));
+                if (!productToUpdate || productToUpdate.quantite <= 0) {
+                    return state;
                 }
+                return { ...state,products: state.products.map((p) =>p.id === parseInt(action.payload.id)
+                     ? { ...p, quantite: p.quantite - 1 }: p),
+                    panier: state.panier.find((p) => p.id === parseInt(action.payload.id))
+                    ? state.panier.map((p) => p.id === parseInt(action.payload.id)? { ...p, quantite: p.quantite + 1 }: p
+                    ): [...state.panier, { ...action.payload, quantite: 1 }],
+                };
+            
+            
+            
                 
             case "suppa":
                 return{...state,panier:[...state.panier.filter((p)=>
