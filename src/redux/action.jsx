@@ -73,3 +73,11 @@ export function addpa(p) {
 
     }
 }
+export function annuler(p) {
+    return{
+        type : "annuler",
+        payload:p
+
+
+    }
+}

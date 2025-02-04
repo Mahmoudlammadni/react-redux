@@ -81,7 +81,17 @@ const redux = (state = initialstate, action) => {
                     ): [...state.panier, { ...action.payload, quantite: 1 }],
                 };
             
-            
+        case "annuler":
+            const pro = state.panier.find((p) => p.id === parseInt(action.payload.id));
+            if (pro) {
+                const qu = pro.quantite;
+                return {...state,products: state.products.map((product) =>
+                     product.id === pro.id ? { ...product, quantite: product.quantite + qu } : product),
+                    panier: state.panier.filter((p) => p.id !== action.payload.id) 
+                };
+            }
+            return state;
+                
             
                 
             case "suppa":

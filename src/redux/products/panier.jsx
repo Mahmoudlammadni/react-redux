@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import { annuler } from "../action";
 export default function Basket() {
   const pan = useSelector((data) => data.panier);
-
+  const dis =useDispatch()
   return (
     <div className="container mt-4">
       <h2 className="text-center mb-4 text-uppercase text-primary">Votre Panier</h2>
@@ -18,8 +19,12 @@ export default function Basket() {
                 <p className="card-text">
                   <span className="fw-bold text-danger">Quantité:</span> {p.quantite}
                 </p>
+                <button className="btn btn-danger px-4 py-1 btn-sm" onClick={()=>dis(annuler(p))}>Annuler</button>
               </div>
             </div>
+      
+
+
           </div>
         ))}
       </div>
