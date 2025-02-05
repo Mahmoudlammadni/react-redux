@@ -33,8 +33,6 @@ export default function Basket() {
           </div>
         ))}
       </div>
-
-      {/* Styled total value */}
       <div className="text-center mt-4">
         <h4 className="text-primary">
           <strong>Total: {total} $</strong>

@@ -26,7 +26,15 @@ const initialstate = {
          { id: 4, nom: "iPad", prix: 800, quantite: 15 },
          { id: 5, nom: "Apple Watch", prix: 500, quantite: 8 }
     ],
-    panier :[]
+    panier :[],
+     notes : [
+        { id: 1, title: "Meeting Notes", content: "Discuss project roadmap", priority: "High" },
+        { id: 2, title: "Shopping List", content: "Buy milk, eggs, and bread", priority: "Medium" },
+        { id: 3, title: "Study Plan", content: "Review JavaScript concepts", priority: "High" },
+        { id: 4, title: "Workout Routine", content: "Leg day exercises", priority: "Low" },
+        { id: 5, title: "Book Summary", content: "Key points from 'Atomic Habits'", priority: "Medium" }
+    ]
+    
     
 
 }
@@ -90,14 +98,26 @@ const redux = (state = initialstate, action) => {
                     panier: state.panier.filter((p) => p.id !== action.payload.id) 
                 };
             }
-            return state;
-                
-            
-                
+            return state;   
             case "suppa":
                 return{...state,panier:[...state.panier.filter((p)=>
                         p.id!==action.payload
                 )]}
+
+        case "add_note":
+            return { ...state, notes: [...state.notes, action.payload] };
+        case "modify_note":
+            const tar_not = state.notes.find((n) => n.id == action.payload.id);
+            if (tar_not) {
+                tar_not.titre = action.payload.titre;
+                tar_not.date = action.payload.date;
+                tar_not.etat = action.payload.etat;
+            }
+            return { ...state };  
+        case "delete_note":
+            return { ...state, notes: state.notes.filter((tar_not) => tar_not.id !== action.payload) };
+              
+
           
         default:
             return state;

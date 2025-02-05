@@ -81,3 +81,25 @@ export function annuler(p) {
 
     }
 }
+
+
+export const add_note = (tch)=>{
+    return{
+        type:"add_note",
+        payload :tch
+    }
+}
+export function modify_note(tch) {
+    return{
+        type:"modify_note",
+        payload : tch
+    }
+    
+}
+export function delete_note(id) {
+    return{
+        type:"delete_note",
+        payload:id
+    }
+    
+}
