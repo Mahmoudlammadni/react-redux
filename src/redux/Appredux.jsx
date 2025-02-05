@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 import App_todos from "./todo/App_todos";
 import App_contact from "./contact/app_contact";
 import App_products from "./products/app_products";
+import App_notes from "./notes/app_contact";
 
 export default function App_redux() {
   return (
@@ -25,6 +26,10 @@ export default function App_redux() {
                 <NavLink to="/p" className={({ isActive }) =>`nav-link ${isActive ? "text-warning" : "text-light"}`}>Products
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/n" className={({ isActive }) =>`nav-link ${isActive ? "text-warning" : "text-light"}`}>Notes
+                </NavLink>
+              </li>
               
             </ul>
           </div>
@@ -36,6 +41,7 @@ export default function App_redux() {
           <Route path="/*" element={<App_todos />} />
           <Route path="/c/*" element={<App_contact />} />
           <Route path="/p/*" element={<App_products />} />
+          <Route path="/n/*" element={<App_notes />} />
         </Routes>
       </div>
     </BrowserRouter>
