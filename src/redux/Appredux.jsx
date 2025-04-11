@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 import App_todos from "./todo/App_todos";
 import App_contact from "./contact/app_contact";
 import App_products from "./products/app_products";
-import App_notes from "./notes/app_contact";
+import App_notes from "./notes/app_note";
 
 export default function App_redux() {
   return (
