@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import NoteSearch from "./NoteSearch";
 import Note from "./notes";
+import Add_note from "./add_note";
 export default function App_notes() {
     return (
         <>
@@ -9,6 +10,7 @@ export default function App_notes() {
     <div className="container-fluid d-flex">
         <Link to={"/n/"} className="navbar-brand me-3">Notes</Link>
         <Link to={"/n/"} className="navbar-brand">Notes</Link>
+        <Link to={"/n/a"} className="navbar-brand">Add note</Link>
     </div>
 </nav>
 
@@ -16,6 +18,7 @@ export default function App_notes() {
                 <Routes>
                     <Route path="/" element={<Note />} />
                     <Route path="/notes/search/:term" element={<NoteSearch />} />
+                    <Route path="/a" element={<Add_note />} />
                 </Routes>
             </div>
         </>
