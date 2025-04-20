@@ -19,32 +19,56 @@ export default function UpdateNote() {
     };
 
     if (!note) {
-        return <p className="text-danger text-center mt-5">Note not found</p>;
+        return (
+            <div className="d-flex justify-content-center mt-5">
+                <p className="text-danger fw-bold">Note introuvable</p>
+            </div>
+        );
     }
 
     return (
-        <div className="container mt-5">
-            <div className="card p-4 shadow-lg">
-                <h2 className="mb-4 text-center text-warning">Modifier la Note</h2>
-                <form onSubmit={handleUpdate}>
-                    <div className="mb-3">
-                        <label className="form-label">Titre</label>
-                        <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} required />
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Contenu</label>
-                        <textarea className="form-control" rows="4" value={content} onChange={(e) => setContent(e.target.value)} required />
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Priorité</label>
-                        <select className="form-select" value={priority} onChange={(e) => setPriority(e.target.value)}>
-                            <option value="Low">Faible</option>
-                            <option value="Medium">Moyenne</option>
-                            <option value="High">Haute</option>
-                        </select>
-                    </div>
-                    <button type="submit" className="btn btn-warning w-100 py-2">Modifier la note</button>
-                </form>
+        <div className="container mt-5 d-flex justify-content-center">
+            <div className="card shadow-lg border-0 w-100" style={{ maxWidth: "600px" }}>
+                <div className="card-body p-4">
+                    <h3 className="card-title text-center text-primary mb-4">Modifier la Note</h3>
+                    <form onSubmit={handleUpdate}>
+                        <div className="mb-3">
+                            <label className="form-label fw-semibold">Titre</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                value={title} 
+                                onChange={(e) => setTitle(e.target.value)} 
+                                required 
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label fw-semibold">Contenu</label>
+                            <textarea 
+                                className="form-control" 
+                                rows="4" 
+                                value={content} 
+                                onChange={(e) => setContent(e.target.value)} 
+                                required 
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label className="form-label fw-semibold">Priorité</label>
+                            <select 
+                                className="form-select" 
+                                value={priority} 
+                                onChange={(e) => setPriority(e.target.value)}
+                            >
+                                <option value="Low">Faible</option>
+                                <option value="Medium">Moyenne</option>
+                                <option value="High">Haute</option>
+                            </select>
+                        </div>
+                        <button type="submit" className="btn btn-primary w-100">
+                            Enregistrer les modifications
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     );
