@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function Note() {
     const notes = useSelector(data => data.notes);
     const [searchTerm, setSearchTerm] = useState('');
@@ -32,6 +32,7 @@ export default function Note() {
                                     <span className={`badge ${n.priority === 'High' ? 'bg-danger' : n.priority === 'Medium' ? 'bg-warning' : 'bg-success'}`}>
                                         {n.priority}
                                     </span>
+                                    <Link to={`/n/u/${n.id}`} className="btn btn-sm btn-outline-primary mt-2">Modifier</Link>
                                 </div>
                             </div>
                         </div>
