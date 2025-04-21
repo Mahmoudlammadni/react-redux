@@ -109,9 +109,9 @@ const redux = (state = initialstate, action) => {
         case "modify_note":
             const tar_not = state.notes.find((n) => n.id == action.payload.id);
             if (tar_not) {
-                tar_not.titre = action.payload.titre;
-                tar_not.date = action.payload.date;
-                tar_not.etat = action.payload.etat;
+                tar_not.title = action.payload.title;
+                tar_not.content = action.payload.content;
+                tar_not.priority = action.payload.priority;
             }
             return { ...state };  
         case "delete_note":
