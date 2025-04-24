@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { delete_note } from "../action";
 export default function Note() {
     const notes = useSelector(data => data.notes);
     const [searchTerm, setSearchTerm] = useState('');
+    const dis= useDispatch()
         const filteredNotes = notes.filter(note => 
         note.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
         note.content.toLowerCase().includes(searchTerm.toLowerCase())
@@ -32,7 +35,8 @@ export default function Note() {
                                     <span className={`badge ${n.priority === 'High' ? 'bg-danger' : n.priority === 'Medium' ? 'bg-warning' : 'bg-success'}`}>
                                         {n.priority}
                                     </span>
-                                    <Link to={`/n/u/${n.id}`} className="btn btn-sm btn-outline-primary mt-2">Modifier</Link>
+                                  <button className="btn btn-outline-danger btn-sm" onClick={() => dis(delete_note(n.id))}>Supprimer</button>  
+                                    <Link to={`/n/u/${n.id}`} className="btn btn-sm btn-outline-primary">Modifier</Link>
                                 </div>
                             </div>
                         </div>
