@@ -7,14 +7,25 @@ export default function App_notes() {
     return (
         <>
             <div className="container mt-4">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div className="container-fluid d-flex">
-        <Link to={"/n/"} className="navbar-brand me-3">Notes</Link>
-        <Link to={"/n/"} className="navbar-brand">Notes</Link>
-        <Link to={"/n/a"} className="navbar-brand">Add note</Link>
-        
+            <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm rounded">
+  <div className="container-fluid">
+    <Link to="/n/" className="navbar-brand fw-bold text-primary">NotesApp</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav ms-auto">
+        <li className="nav-item">
+          <Link to="/n/" className="nav-link">All Notes</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/n/a" className="nav-link">Add Note</Link>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
+
 
 
                 <Routes>
