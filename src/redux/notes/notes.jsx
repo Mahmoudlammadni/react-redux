@@ -37,6 +37,7 @@ export default function Note() {
                                     </span>
                                   <button className="btn btn-outline-danger btn-sm" onClick={() => dis(delete_note(n.id))}>Supprimer</button>  
                                     <Link to={`/n/u/${n.id}`} className="btn btn-sm btn-outline-primary">Modifier</Link>
+                                    <button className="btn btn-outline-warning btn-sm"onClick={()=> {n.fav="true"}}>Favoriser</button>  
                                 </div>
                             </div>
                         </div>
