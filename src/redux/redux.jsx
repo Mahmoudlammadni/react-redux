@@ -28,11 +28,11 @@ const initialstate = {
     ],
     panier :[],
      notes : [
-        { id: 1, title: "Meeting Notes", content: "Discuss project roadmap", priority: "High" },
-        { id: 2, title: "Shopping List", content: "Buy milk, eggs, and bread", priority: "Medium" },
-        { id: 3, title: "Study Plan", content: "Review JavaScript concepts", priority: "High" },
-        { id: 4, title: "Workout Routine", content: "Leg day exercises", priority: "Low" },
-        { id: 5, title: "Book Summary", content: "Key points from 'Atomic Habits'", priority: "Medium" }
+        { id: 1, title: "Meeting Notes", content: "Discuss project roadmap", priority: "High",fav:false },
+        { id: 2, title: "Shopping List", content: "Buy milk, eggs, and bread", priority: "Medium" ,fav:false },
+        { id: 3, title: "Study Plan", content: "Review JavaScript concepts", priority: "High" ,fav:false },
+        { id: 4, title: "Workout Routine", content: "Leg day exercises", priority: "Low",fav:false  },
+        { id: 5, title: "Book Summary", content: "Key points from 'Atomic Habits'", priority: "Medium",fav:false }
     ]
     
     
