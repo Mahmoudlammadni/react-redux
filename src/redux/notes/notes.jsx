@@ -15,13 +15,7 @@ export default function Note() {
     return (
         <div className="container mt-4">
             <div className="d-flex align-items-center mb-4">
-                <input 
-                    type="text" 
-                    className="form-control w-auto me-2" 
-                    placeholder="Search notes..." 
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)} 
-                />
+                <input  type="text"  className="form-control w-auto me-2"  placeholder="Search notes..."  value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}  />
             </div>
 
             <div className="row">

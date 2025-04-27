@@ -1,7 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { toggle_fav } from "../action";  // Import your toggle_fav action
 
 export default function Fav_note() {
     const notes = useSelector(state => state.notes);
+    const dispatch = useDispatch();
+    
+    // Filter only the favorite notes
     const favoriteNotes = notes.filter(note => note.fav === true); 
 
     return (
@@ -18,6 +22,9 @@ export default function Fav_note() {
                                     <span className={`badge ${n.priority === 'High' ? 'bg-danger' : n.priority === 'Medium' ? 'bg-warning' : 'bg-success'}`}>
                                         {n.priority}
                                     </span>
+                                    
+                                    <buttonclassName="btn btn-outline-danger btn-sm mt-2onClick={()=> {n.fav=false}} Defavoriser
+                                    </button>
                                 </div>
                             </div>
                         </div>
