@@ -23,7 +23,7 @@ export default function Fav_note() {
                                         {n.priority}
                                     </span>
                                     
-                                    <buttonclassName="btn btn-outline-danger btn-sm mt-2onClick={()=> {n.fav=false}} Defavoriser
+                                    <button className="btn btn-outline-danger btn-sm mt-2" onClick={()=> {n.fav=false}}> Defavoriser
                                     </button>
                                 </div>
                             </div>
