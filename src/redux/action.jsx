@@ -103,3 +103,23 @@ export function delete_note(id) {
     }
     
 }
+
+
+export const add_user=(u)=>{
+    return{
+        type:"add_user",
+        payload:u
+    }
+}
+export const update_user=(u)=>{
+    return{
+        type:"update_user",
+        payload:u
+    }
+}
+export function delete_user(u){
+return{
+    type:"delete_user",
+    payload:u
+}
+}
