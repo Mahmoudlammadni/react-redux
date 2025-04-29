@@ -140,7 +140,7 @@ const redux = (state = initialstate, action) => {
             }
             return{...state}
         case "delete_user":
-            return {...state,users:state.users.filter((p)=>p!==action.payload)}
+            return {...state,users:state.users.filter((p)=>p.id!==action.payload)}
         default:
             return state;
     }
