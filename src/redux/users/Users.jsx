@@ -10,8 +10,10 @@ export default function User() {
                 <thead className="thead-dark">
                     <tr>
                         <th>Name</th>
-                        <th>Surname</th>
+                        <th>prenom</th>
                         <th>Email</th>
+                        <th>telephone</th>
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +22,7 @@ export default function User() {
                             <td>{u.nom}</td>
                             <td>{u.prenom}</td>
                             <td>{u.email}</td>
+                            <td>{u.telephone}</td>
                         </tr>
                     ))}
                 </tbody>
