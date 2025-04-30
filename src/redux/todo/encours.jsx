@@ -8,8 +8,7 @@ export default function Encours() {
     return(  
     <div className="row">{
         tchs.filter((t)=>t.etat=== "en cours")
-        .map((p,i)=>{
-          
+        .map((p)=>{
             return(
                 <div key={p.id} className="col-md-4 mb-3">
             <div className="card shadow-sm border-0 rounded">

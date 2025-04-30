@@ -4,6 +4,7 @@ import Note from "./notes";
 import Add_note from "./add_note";
 import UpdateNote from "./update_note";
 import Fav_note from "./fav_note";
+import HighNotes from "./High_note";
 export default function App_notes() {
     return (
         <>
@@ -23,7 +24,10 @@ export default function App_notes() {
           <Link to="/n/a" className="nav-link">Add Note</Link>
         </li>
         <li className="nav-item">
-          <Link to="/n/f" className="nav-link">Favorite Notes</Link>
+          <Link to="/n/f" className="nav-link">Favorites</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/n/h" className="nav-link">High</Link>
         </li>
       </ul>
     </div>
@@ -38,6 +42,7 @@ export default function App_notes() {
                     <Route path="/a" element={<Add_note />} />
                     <Route path="/u/:id" element={<UpdateNote />} />
                     <Route path="/f" element={<Fav_note />} />
+                    <Route path="/h" element={<HighNotes />} />
                 </Routes>
             </div>
         </>
