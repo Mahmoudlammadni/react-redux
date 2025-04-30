@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { delete_user } from "../action";
-
+import { Link } from "react-router-dom";
 export default function User() {
     const user = useSelector((data) => data.users);
     console.log(user);
@@ -24,7 +24,7 @@ export default function User() {
                             <td>{u.prenom}</td>
                             <td>{u.email}</td>
                             <td>{u.telephone}</td>
-                            <td><button className="btn btn-success"> Modify</button></td>
+                            <td><Link to={`/u/m/${u.id}`} className="btn btn-success"> Modify</Link></td>
                             <td><button className="btn btn-danger" onClick={()=>{dis(delete_user(u.id))}}>Delete</button> </td>
                         </tr>
                     ))}

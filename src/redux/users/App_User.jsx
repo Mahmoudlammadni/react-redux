@@ -1,5 +1,6 @@
 import User from "./Users";
 import Add_user from "./add_user";
+import Update_user from "./update_user";
 import { Link, Routes, Route } from "react-router-dom";
 
 export default function App_User() {
@@ -12,6 +13,7 @@ export default function App_User() {
                 <Routes>
                     <Route path="/" element={<User />} />
                     <Route path="/a" element={<Add_user />} />
+                    <Route path="/u" element={<Update_user />} />
                 </Routes>
           
         </div>
