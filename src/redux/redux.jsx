@@ -35,13 +35,18 @@ const initialstate = {
         { id: 5, title: "Book Summary", content: "Key points from 'Atomic Habits'", priority: "Medium",fav:false }
     ],
     users:[
-        
             {id: 1, nom: "Omar", prenom: "Marzougi", email: "omar@gmail.com", telephone: "0633453434"},
             {id: 2, nom: "Sara", prenom: "El Amrani", email: "sara@gmail.com", telephone: "0612345678"},
             {id: 3, nom: "Youssef", prenom: "Bennani", email: "youssef@gmail.com", telephone: "0623456789"},
             {id: 4, nom: "Fatima", prenom: "Ouahbi", email: "fatima@gmail.com", telephone: "0678912345"},
             {id: 5, nom: "Ahmed", prenom: "Kabbaj", email: "ahmed@gmail.com", telephone: "0654321987"},
-            {id: 6, nom: "Hanae", prenom: "Slaoui", email: "hanae@gmail.com", telephone: "0667891234"}
+            {id: 6, nom: "Hanae", prenom: "Slaoui", email: "hanae@gmail.com", telephone: "0667891234"},
+            {id: 7, nom: "Omar", prenom: "Marzougi", email: "omar@gmail.com", telephone: "0633453434"},
+            {id: 8, nom: "Sara", prenom: "El Amrani", email: "sara@gmail.com", telephone: "0612345678"},
+            {id: 9, nom: "Youssef", prenom: "Bennani", email: "youssef@gmail.com", telephone: "0623456789"},
+            {id: 10, nom: "Fatima", prenom: "Ouahbi", email: "fatima@gmail.com", telephone: "0678912345"},
+            {id: 11, nom: "Ahmed", prenom: "Kabbaj", email: "ahmed@gmail.com", telephone: "0654321987"},
+            {id: 12, nom: "Hanae", prenom: "Slaoui", email: "hanae@gmail.com", telephone: "0667891234"}
           
           
     ]
