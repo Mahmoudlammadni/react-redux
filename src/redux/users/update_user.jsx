@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { update_user } from "../action";
 
-export default function Update_user() {
+export default function Update_Users() {
   const { id } = useParams(); 
   const user = useSelector((state) =>
     state.users.find((user) => user.id === parseInt(id))
