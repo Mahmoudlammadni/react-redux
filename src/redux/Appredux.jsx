@@ -4,6 +4,7 @@ import App_contact from "./contact/app_contact";
 import App_products from "./products/app_products";
 import App_notes from "./notes/app_note";
 import App_User from "./users/App_User";
+import App_basket from "./basket/App_basket";
 
 export default function App_redux() {
   return (
@@ -35,6 +36,10 @@ export default function App_redux() {
                 <NavLink to="/u" className={({ isActive }) =>`nav-link ${isActive ? "text-warning" : "text-light"}`}>users
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/b" className={({ isActive }) =>`nav-link ${isActive ? "text-warning" : "text-light"}`}>basket
+                </NavLink>
+              </li>
               
             </ul>
           </div>
@@ -48,6 +53,7 @@ export default function App_redux() {
           <Route path="/p/*" element={<App_products />} />
           <Route path="/n/*" element={<App_notes />} />
           <Route path="/u/*" element={<App_User/>} />
+          <Route path="/b/*" element={<App_basket/>} />
         </Routes>
       </div>
     </BrowserRouter>
