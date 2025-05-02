@@ -122,4 +122,23 @@ return{
     type:"delete_user",
     payload:u
 }
+
 }
+
+export const add_basket=(b)=>{
+    return{
+        type:"add_basket",
+        payload:b
+    }
+}
+export const update_basket=(b)=>{
+    return{
+        type:"update_basket",
+        payload:b
+    }
+}
+export function delete_basket(b){
+return{
+    type:"delete_basket",
+    payload:b
+}}
