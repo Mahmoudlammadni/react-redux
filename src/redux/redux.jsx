@@ -46,10 +46,16 @@ const initialstate = {
             {id: 9, nom: "Youssef", prenom: "Bennani", email: "youssef@gmail.com", telephone: "0623456789"},
             {id: 10, nom: "Fatima", prenom: "Ouahbi", email: "fatima@gmail.com", telephone: "0678912345"},
             {id: 11, nom: "Ahmed", prenom: "Kabbaj", email: "ahmed@gmail.com", telephone: "0654321987"},
-            {id: 12, nom: "Hanae", prenom: "Slaoui", email: "hanae@gmail.com", telephone: "0667891234"}
-          
-          
-    ]
+            {id: 12, nom: "Hanae", prenom: "Slaoui", email: "hanae@gmail.com", telephone: "0667891234"}   
+    ],
+    basket:[
+        { "id": 1, "nom": "Ordinateur portable", "quantite": 5, "type": "électronique" },
+        { "id": 2, "nom": "Smartphone", "quantite": 12, "type": "électronique" },
+        { "id": 3, "nom": "Table", "quantite": 4, "type": "meuble" },
+        { "id": 4, "nom": "Télévision", "quantite": 3, "type": "électronique" },
+        { "id": 5, "nom": "Chaise", "quantite": 10, "type": "meuble" }
+      ]
+      
     
     
 
@@ -146,6 +152,20 @@ const redux = (state = initialstate, action) => {
             return{...state}
         case "delete_user":
             return {...state,users:state.users.filter((p)=>p.id!==action.payload)}
+
+        case "add_basket":
+            return {...state,basket:[...state.basket,action.payload]}
+        case "update_basket":
+            const bsk=state.basket.find((b)=>b.id===action.payload.id)
+            if (bsk) {
+                usr.nom=action.payload.nom
+                usr.quantite=action.payload.quantite
+                usr.email=action.payload.email
+                usr.type=action.payload.type
+            }
+            return{...state}
+            case "delete_basket":
+                return {...state,basket:state.basket.filter((b)=>b.id!==action.payload)}
         default:
             return state;
     }
