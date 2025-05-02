@@ -1,6 +1,8 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Basket from './Basket';
 export default function App_basket(){
+return(
+
 
     <div className="container mt-4">
           <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
@@ -14,4 +16,5 @@ export default function App_basket(){
             
           </Routes>
         </div>
+        )
 }
