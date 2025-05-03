@@ -14,6 +14,8 @@ export default function Basket() {
                 <h5 className="card-title text-success">{item.nom}</h5>
                 <p className="card-text"><strong>Type :</strong> {item.type}</p>
                 <p className="card-text"><strong>Quantité :</strong> {item.quantite}</p>
+                <button className="btn btn-outline-danger btn-sm me-2">🗑 Supprimer</button>
+                <button className="btn btn-outline-primary btn-sm">✏ Modifier</button>
               </div>
             </div>
           </div>
