@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-
+import { delete_basket } from "../action";
+import { useDispatch } from "react-redux";
 export default function Basket() {
   const basket = useSelector(state => state.basket);
-
+const dis = useDispatch()
   return (
     <div className="container mt-4">
       <h2 className="text-center text-primary mb-4">🛒 Votre Panier</h2>
@@ -14,7 +15,8 @@ export default function Basket() {
                 <h5 className="card-title text-success">{b.nom}</h5>
                 <p className="card-text"><strong>Type :</strong> {b.type}</p>
                 <p className="card-text"><strong>Quantité :</strong> {b.quantite}</p>
-                <button className="btn btn-outline-danger btn-sm me-2">🗑 Supprimer</button>
+                <button className="btn btn-outline-danger btn-sm me-2" onClick={() => dis(delete_basket(b.id))}>🗑 Supprimer</button>
+                
                 <button className="btn btn-outline-primary btn-sm">✏ Modifier</button>
               </div>
             </div>
