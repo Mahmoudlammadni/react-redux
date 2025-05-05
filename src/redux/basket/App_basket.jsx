@@ -1,6 +1,7 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Basket from './Basket';
 import AddBasket from './add_basket';
+import EditBasket from './update_basket';
 export default function App_basket(){
 return(
 
@@ -16,6 +17,7 @@ return(
           <Routes>
             <Route path="/" element={<Basket />} />
             <Route path="/a" element={<AddBasket />} />
+            <Route path="/e/:id" element={<EditBasket />} /> 
             
           </Routes>
         </div>

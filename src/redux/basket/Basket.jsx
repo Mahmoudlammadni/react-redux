@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { delete_basket } from "../action";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Basket() {
   const basket = useSelector(state => state.basket);
@@ -28,7 +29,8 @@ export default function Basket() {
                 <p className="card-text"><strong>Type :</strong> {b.type}</p>
                 <p className="card-text"><strong>Quantité :</strong> {b.quantite}</p>
                 <button className="btn btn-outline-danger btn-sm me-2" onClick={() => dis(delete_basket(b.id))}>🗑 Supprimer</button>
-                <button className="btn btn-outline-primary btn-sm">✏ Modifier</button>
+                <Link className="btn btn-outline-primary btn-sm" to={`/b/e/${b.id}`} >
+                 ✏ Modifier </Link>
               </div>
             </div>
           </div>

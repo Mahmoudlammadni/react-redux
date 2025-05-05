@@ -158,10 +158,10 @@ const redux = (state = initialstate, action) => {
         case "update_basket":
             const bsk=state.basket.find((b)=>b.id===action.payload.id)
             if (bsk) {
-                usr.nom=action.payload.nom
-                usr.quantite=action.payload.quantite
-                usr.email=action.payload.email
-                usr.type=action.payload.type
+                bsk.nom=action.payload.nom
+                bsk.quantite=action.payload.quantite
+                bsk.email=action.payload.email
+                bsk.type=action.payload.type
             }
             return{...state}
             case "delete_basket":
